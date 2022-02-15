@@ -1,9 +1,12 @@
 import Image from "next/image";
 import imageLoader from "../../imageLoader";
-import { Character, GetCharacterResults } from "../../types";
+import { useRouter } from "next/router";
+import { Character } from "../../types";
 import { GetServerSideProps } from "next";
 
 function CharacterPage({ character }: { character: Character }) {
+  const router = useRouter();
+  console.log(router.query.id);
   return (
     <div>
       <h1>{character.name}</h1>
