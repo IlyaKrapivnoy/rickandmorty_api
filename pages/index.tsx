@@ -3,6 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { Character, GetCharacterResults } from "../types";
+import imageLoader from "../imageLoader";
 
 const Home: NextPage<{ characters: Character[] }> = ({ characters }) => {
   return (
@@ -20,6 +21,8 @@ const Home: NextPage<{ characters: Character[] }> = ({ characters }) => {
               alt={character.name}
               width="200"
               height="200"
+              loader={imageLoader}
+              unoptimized
             />
           </div>
         );
